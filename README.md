@@ -20,7 +20,38 @@
 ### Step 15: In blend tree, in blend type choose (2D Freedom Directional), parameter (InputX, InputY) , one crouch (0,-1,1) and walking (1,0,1). Bring the camera under the player 
 
 ## Program:
+~~~
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class idleToCrouch : MonoBehaviour
+{
+    public Animator animator;
+    public float InputX;
+    public float InputY;
+    // Start is called before the first frame update
+    void Start()
+    {
+        animator = this.gameObject.GetComponent<Animator>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        InputY = Input.GetAxis("Vertical");
+        InputX = Input.GetAxis("Horizontal");
+        animator.SetFloat("InputY",InputY);
+        animator.SetFloat("InputX", InputX);
+    }
+}
+~~~
 
 ## Output:
+![image](https://github.com/sasidharan403/Animator/assets/94154712/7a73bdce-6893-403c-92a5-16cba59483b4)
+![image](https://github.com/sasidharan403/Animator/assets/94154712/f62cf7a5-afbb-4e02-8711-b1136b290f33)
+
+
 
 ## Result:
+Thus, the animator was successfully developed in unity engine with the C#.
